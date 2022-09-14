@@ -8,17 +8,16 @@
 // Проверьте, будут ли работать методы массивов для переменной elems.
 
 let elems1 = document.querySelectorAll(".text");
-
 for (let elem of elems1) {
   console.log(elem.textContent);
 }
 console.log(Array.isArray(elems1));
 
-// ************************      Преобразование псевдомассивов в JavaScript          *****************************
+// ************************      Преобразование псевдомассивов в JavaScript          ********************************
 
 // 2. Преобразуйте псевдомассив в массив тремя разными способами
-let elems2 = document.querySelectorAll(".text");
 
+let elems2 = document.querySelectorAll(".text");
 // A. деструктуризация
 let arr2A = [...elems2];
 console.log(Array.isArray(arr2A));
@@ -39,7 +38,10 @@ console.log(Array.isArray(arr2C));
 // 3. Проверьте, какой тип коллекции будет в свойстве childNodes и в свойстве children.
 let box3A = document.querySelector(".box");
 
-// *************************      Коллекции Map в JavaScript                 ****************************************
+console.log(box3A.childNodes);
+console.log(box3A.children);
+
+// *************************      Коллекции Map в JavaScript            ********************************************
 
 // 4. Пусть даны 3 массива. Создайте коллекцию Map, сделайте ключами коллекции эти массивы,
 // а значениями - какие - нибудь строки.
@@ -76,3 +78,27 @@ map5.set(obj5C, arr5B);
 
 console.log(map5.get(obj5A));
 console.log(map5);
+
+// *************************      Отделение ключей и значений в коллекциях Map    *******************************
+
+// 6. Пусть дана коллекция Map. Получите массив ее ключей и переберите их циклом for-of.
+
+let map6 = new Map();
+map6.set(1, "str1");
+map6.set(2, "str2");
+map6.set(3, "str3");
+
+for (let key of map6.keys()) {
+  console.log(key);
+}
+
+// 7. Пусть дана коллекция Map. Получите массив ее элементов и переберите их циклом for-of.
+
+let map7 = new Map();
+map7.set(1, "str1");
+map7.set(2, "str2");
+map7.set(3, "str3");
+
+for (let value of map7.values()) {
+  console.log(value);
+}
