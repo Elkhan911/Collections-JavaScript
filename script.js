@@ -147,28 +147,49 @@ for (let input of inputs9All) {
 // let arr = [1, 2, 3, 1, 3, 4];
 // С помощью этого массива создаейте коллекцию Set.
 
-let set1 = new Set([1, 2, 3, 1, 3, 4]);
-console.log(set1);
+let set10 = new Set([1, 2, 3, 1, 3, 4]);
+console.log(set10);
 
 // 11. Создайте пустую коллекцию Set.С помощью метода add
 // добавьте в нее элементы со значениями 1, 2 и 3.
 
-let set2 = new Set();
-set2.add(1);
-set2.add(2);
-set2.add(3);
-console.log(set2);
+let set11 = new Set();
+set11.add(1);
+set11.add(2);
+set11.add(3);
+console.log(set11);
 
 // 12. Создайте коллекцию Set с начальными значениями 1, 2 и 3.
 // Выведите на экран количество элементов в коллекции.
 
-let set3 = new Set([1, 2, 3]);
-console.log(set3.size);
+let set12 = new Set([1, 2, 3]);
+console.log(set12.size);
 
 // 13. Создайте коллекцию Set с начальными значениями 1, 2 и 3.
 // Проверьте наличие в коллекции элемента со значением 3,
 // а затем элемента со значением 4.
 
-let set4 = new Set([1, 2, 3]);
-console.log(set4.has(3));
-console.log(set4.has(4));
+let set13 = new Set([1, 2, 3]);
+console.log(set13.has(3));
+console.log(set13.has(4));
+
+// 14. Создайте коллекцию Set с какими-нибудь числами.
+// Переберите эту коллекцию циклом и найдите сумму ее элементов.
+
+let set14 = new Set([1, 2, 3, 4, 5]);
+let res = 0;
+
+for (let elem of set14) {
+  res += elem;
+}
+
+console.log(res);
+
+// 15. Дана коллекция Set. Преобразуйте ее в массив двумя способами
+let set15 = new Set([1, 2, 3]);
+
+let arr15A = [...set15];
+console.log(arr15A);
+
+let arr15B = Array.from(set15);
+console.log(arr15B);
