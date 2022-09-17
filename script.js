@@ -278,3 +278,57 @@ for (let key in obj20) {
 }
 
 console.log(res20);
+
+// 21. Дана строка в формате JSON, содержащая имена юзеров:
+// let json = '["user1","user2","user3","user4","user5"]';
+// Выведите эти имена в виде списка ul.
+
+let json21 = '["user1","user2","user3","user4","user5"]';
+let arr21 = JSON.parse(json21);
+let list21 = document.querySelector("#_list21");
+console.log(arr21);
+
+for (let elem of arr21) {
+  let li = document.createElement("li");
+  li.textContent = elem;
+  li.classList.add("text");
+  list21.append(li);
+}
+
+// 22. Дана строка в формате JSON, содержащая массив с данными работников:
+// Выведите этих работников на экран в виде HTML таблицы.
+
+let json22 = `[
+	{
+		"name": "user1",
+		"age": 25,
+		"salary": 1000
+	},
+	{
+		"name": "user2",
+		"age": 26,
+		"salary": 2000
+	},
+	{
+		"name": "user3",
+		"age": 27,
+		"salary": 3000
+	}
+]`;
+let table22 = document.querySelector("#_table");
+let arr22 = JSON.parse(json22);
+
+for (let elem of arr22) {
+  let obj = elem;
+
+  let tr = document.createElement("tr");
+  tr.classList.add("task__row");
+  table22.append(tr);
+
+  for (let key in obj) {
+    let td = document.createElement("td");
+    td.textContent = obj[key];
+    td.classList.add("task__column");
+    tr.append(td);
+  }
+}

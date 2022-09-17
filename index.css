@@ -59,3 +59,20 @@
 .task__button:hover {
   background-color: floralwhite;
 }
+
+.task__table {
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.task__row {
+  border: 1px solid brown;
+}
+
+.task__column {
+  border: 1px seagreen solid;
+  height: 50px;
+  width: 100px;
+}
