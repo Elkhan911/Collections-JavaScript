@@ -332,3 +332,31 @@ for (let elem of arr22) {
     tr.append(td);
   }
 }
+
+// 23. Дан следующий массив:
+// let arr = ['user1', 'user2', 'user3', 'user4', 'user5'];
+// Преобразуйте этот массив в формат JSON.
+
+let arr23 = ["user1", "user2", "user3", "user4", "user5"];
+let json23 = JSON.stringify(arr23);
+console.log(json23);
+
+// 24. Дан следующий HTML:
+/* <ul>
+	<li>city1</li>
+	<li>city2</li>
+	<li>city3</li>
+	<li>city4</li>
+</ul>
+Получите список городов в формате JSON. */
+
+let list24 = document.querySelector("#_list24");
+let text24All = document.querySelectorAll(".task__text24");
+let arr24 = [];
+
+for (let text of text24All) {
+  arr24.push(text.textContent);
+}
+
+let json24 = JSON.stringify(arr24);
+console.log(json24);
