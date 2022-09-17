@@ -7,7 +7,7 @@
 // let elems = document.querySelectorAll(".text");
 // Проверьте, будут ли работать методы массивов для переменной elems.
 
-let elems1 = document.querySelectorAll(".text");
+let elems1 = document.querySelectorAll(".task__text1");
 for (let elem of elems1) {
   console.log(elem.textContent);
 }
@@ -17,7 +17,7 @@ console.log(Array.isArray(elems1));
 
 // 2. Преобразуйте псевдомассив в массив тремя разными способами
 
-let elems2 = document.querySelectorAll(".text");
+let elems2 = document.querySelectorAll(".task__text1");
 // A. деструктуризация
 let arr2A = [...elems2];
 console.log(Array.isArray(arr2A));
@@ -36,7 +36,7 @@ console.log(Array.isArray(arr2C));
 // ************************      Разница между NodeList и HTMLCollection        ***********************************
 
 // 3. Проверьте, какой тип коллекции будет в свойстве childNodes и в свойстве children.
-let box3A = document.querySelector(".box");
+let box3A = document.querySelector(".task__box");
 
 console.log(box3A.childNodes);
 console.log(box3A.children);
@@ -109,7 +109,7 @@ for (let value of map7.values()) {
 // ключами в которой будут инпуты, а значением - их порядковый номер на странице.
 // Сделайте так, чтобы по клику на любой инпут ему в value записывался его порядковый номер.
 
-let inputs8All = document.querySelectorAll(".input8");
+let inputs8All = document.querySelectorAll(".task__input8");
 let map8 = new Map();
 
 for (let i = 0; i < inputs8All.length; i++) {
@@ -125,7 +125,7 @@ for (let i = 0; i < inputs8All.length; i++) {
 // Сделайте так, чтобы по потери фокуса в инпуте в консоль выводился массив
 // всех введенных ранее в инпут чисел.
 
-let inputs9All = document.querySelectorAll(".input9");
+let inputs9All = document.querySelectorAll(".task__input9");
 let map9 = new Map();
 let valueCounter1 = 1;
 
@@ -193,3 +193,26 @@ console.log(arr15A);
 
 let arr15B = Array.from(set15);
 console.log(arr15B);
+
+// 16. Дан массив. Преобразуйте его в коллекцию.
+
+let arr16 = [1, 2, 3];
+let set16 = new Set(arr16);
+console.log(set16);
+
+// 17. Напишите функцию, которая параметром будет принимать массив
+// и возвращать этот массив без дублей.
+
+let arr17 = [1, 2, 2, 3, 3, 4, 3, 4];
+
+function deleteDoubles(arr) {
+  let set17 = new Set(arr);
+
+  return [...set17];
+}
+
+console.log(deleteDoubles(arr17));
+
+// 18. Даны абзацы и кнопка.Пользователь кликает на эти абзацы в произвольном порядке.
+// Сделайте так, чтобы по нажатию на кнопку в конец каждого абзаца,
+// на который был совершен клик, был добавлен восклицательный знак.
