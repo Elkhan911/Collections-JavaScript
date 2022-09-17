@@ -1,0 +1,30 @@
+.text {
+  margin: auto;
+}
+
+.header {
+  margin: auto;
+  width: 1000px;
+  text-align: center;
+  padding: 50px;
+  border: 1px solid black;
+}
+
+.task {
+  padding: 50px;
+  border: 1px solid black;
+  width: 1000px;
+  margin: auto;
+}
+
+.task__header {
+  margin: auto;
+  width: 1000px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.task__box {
+  display: flex;
+  justify-content: space-between;
+}
