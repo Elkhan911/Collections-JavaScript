@@ -315,20 +315,20 @@ let json22 = `[
 		"salary": 3000
 	}
 ]`;
-let table22 = document.querySelector("#_table");
+let table22 = document.querySelector("#_table22");
 let arr22 = JSON.parse(json22);
 
 for (let elem of arr22) {
   let obj = elem;
 
   let tr = document.createElement("tr");
-  tr.classList.add("task__row");
+  tr.classList.add("table__row");
   table22.append(tr);
 
   for (let key in obj) {
     let td = document.createElement("td");
     td.textContent = obj[key];
-    td.classList.add("task__column");
+    td.classList.add("table__column");
     tr.append(td);
   }
 }
@@ -350,7 +350,6 @@ console.log(json23);
 </ul>
 Получите список городов в формате JSON. */
 
-let list24 = document.querySelector("#_list24");
 let text24All = document.querySelectorAll(".task__text24");
 let arr24 = [];
 
@@ -360,3 +359,73 @@ for (let text of text24All) {
 
 let json24 = JSON.stringify(arr24);
 console.log(json24);
+
+// 25. Дан следующий JSON:
+// let json = '["user1","user2","user3","user4","user5"]';
+// Добавьте в конец строки еще одного юзера.
+
+let json25 = '["user1","user2","user3","user4","user5"]';
+let arr25 = JSON.parse(json25);
+arr25.push("user6");
+json25 = JSON.stringify(arr25);
+console.log(json25);
+
+// 26. Дан следующий JSON:
+// let json = '["user1","user2","user3","user4","user5"]';
+// Поменяйте имя второго юзера.
+
+let json26 = '["user1","user2","user3","user4","user5"]';
+let arr26 = JSON.parse(json26);
+arr26[1] = "userX";
+
+json26 = JSON.stringify(arr26);
+console.log(json26);
+
+/* 27. Дан следующий JSON:
+Добавьте в эту строку еще одного работника. 
+let json = `[
+	{
+		"name": "user1",
+		"age": 25,
+		"salary": 1000
+	},
+	{
+		"name": "user2",
+		"age": 26,
+		"salary": 2000
+	},
+	{
+		"name": "user3",
+		"age": 27,
+		"salary": 3000
+	}
+]`; */
+
+let json27 = `[
+	{
+		"name": "user1",
+		"age": 25,
+		"salary": 1000
+	},
+	{
+		"name": "user2",
+		"age": 26,
+		"salary": 2000
+	},
+	{
+		"name": "user3",
+		"age": 27,
+		"salary": 3000
+	}
+]`;
+
+let arrOfUsers = JSON.parse(json27);
+let newUser = {
+  name: "user4",
+  age: 30,
+  salary: 4000,
+};
+
+arrOfUsers.push(newUser);
+json27 = JSON.stringify(arrOfUsers);
+console.log(json27);
