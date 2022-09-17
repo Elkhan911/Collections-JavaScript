@@ -141,7 +141,7 @@ for (let input of inputs9All) {
   });
 }
 
-// *************************        Коллекции Set в JavaScript            *****************************************
+// *************************           Коллекции Set              *****************************************
 
 // 10. Дан массив с числами:
 // let arr = [1, 2, 3, 1, 3, 4];
@@ -177,13 +177,13 @@ console.log(set13.has(4));
 // Переберите эту коллекцию циклом и найдите сумму ее элементов.
 
 let set14 = new Set([1, 2, 3, 4, 5]);
-let res = 0;
+let res14 = 0;
 
 for (let elem of set14) {
-  res += elem;
+  res14 += elem;
 }
 
-console.log(res);
+console.log(res14);
 
 // 15. Дана коллекция Set. Преобразуйте ее в массив двумя способами
 let set15 = new Set([1, 2, 3]);
@@ -213,6 +213,68 @@ function deleteDoubles(arr) {
 
 console.log(deleteDoubles(arr17));
 
-// 18. Даны абзацы и кнопка.Пользователь кликает на эти абзацы в произвольном порядке.
+// 18. Даны абзацы и кнопка. Пользователь кликает на эти абзацы в произвольном порядке. ------- ?????????
 // Сделайте так, чтобы по нажатию на кнопку в конец каждого абзаца,
 // на который был совершен клик, был добавлен восклицательный знак.
+
+let text18All = document.querySelectorAll(".task__text18");
+let button18 = document.querySelector(".task__button19");
+let set18 = new Set();
+
+for (let text of text18All) {
+  text.addEventListener("click", function () {
+    set18.add(this);
+  });
+
+  // console.log(set18);
+
+  button18.addEventListener("click", function () {
+    for (let elem of [...set18]) {
+      // console.log(elem);
+      elem.textContent += "!";
+    }
+  });
+}
+
+// *************************     Преобразование JSON в структуру данных JavaScript     ***********************************
+
+// 19. Дана строка в формате JSON, содержащая массив с числами:
+// let json = '[1,2,3,4,5]';
+// Преобразуйте эту строку в настоящий массив JavaScript и найдите сумму чисел этого массива.
+
+let json19 = "[1,2,3,4,5]";
+let arr19 = JSON.parse(json19);
+let res19 = 0;
+
+for (let elem of arr19) {
+  res19 += elem;
+}
+console.log(res19);
+
+// 20. Дана строка в формате JSON, содержащая объект с данными:
+// Найдите сумму чисел из представленных данных
+// let json = `{
+// 	"data1": [1,2,3],
+// 	"data2": [4,5,6],
+// 	"data3": [7,8,9]
+// }`;
+
+let json20 = `{
+ 	"data1": [1,2,3],
+ 	"data2": [4,5,6],
+ 	"data3": [7,8,9]
+ }`;
+
+let obj20 = JSON.parse(json20);
+console.log(obj20);
+let res20 = 0;
+
+for (let key in obj20) {
+  let subObj = obj20[key];
+
+  for (let elem of subObj) {
+    res20 += elem;
+  }
+}
+
+console.log(res20);
