@@ -220,21 +220,22 @@ console.log(deleteDoubles(arr17));
 let text18All = document.querySelectorAll(".task__text18");
 let button18 = document.querySelector(".task__button19");
 let set18 = new Set();
+console.log(set18);
 
 for (let text of text18All) {
   text.addEventListener("click", function () {
     set18.add(this);
   });
-
-  // console.log(set18);
-
-  button18.addEventListener("click", function () {
-    for (let elem of [...set18]) {
-      // console.log(elem);
-      elem.textContent += "!";
-    }
-  });
 }
+console.log(set18);
+
+button18.addEventListener("click", function () {
+  for (let elem of [...set18]) {
+    // console.log(elem);
+    elem.textContent += "!";
+  }
+  set18 = new Set();
+});
 
 // *************************     Преобразование JSON в структуру данных JavaScript     ***********************************
 
